@@ -1,1 +1,1 @@
-web: gunicorn -w 1 -b 0.0.0.0:$PORT streamlit.cli.main:app run app.py
+web: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
