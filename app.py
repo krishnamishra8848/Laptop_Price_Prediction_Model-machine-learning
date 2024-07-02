@@ -21,10 +21,9 @@ def main():
     # Load DataFrame
     df = load_data('dataframe.pkl')
 
-    # User inputs for laptop specifications
-    st.header('Enter Specifications')
-
-    col1, col2 = st.beta_columns(2)  # Split into two columns
+    # Inputs for user to enter specifications
+    st.subheader('Enter Specifications')
+    col1, col2 = st.columns([1, 3])  # Adjusting column widths
 
     with col1:
         brand_options = df['Brand'].unique()
@@ -73,9 +72,12 @@ def main():
         X = pd.DataFrame([input_data])
         predicted_price = model.predict(X)[0]
 
-        # Display prediction with larger text using HTML h1 tag
+        # Display prediction result with enhanced styling
         st.subheader('Predicted Price')
-        st.markdown(f'<h1 style="text-align:center;color:#008080;">The predicted price for the selected laptop configuration is Rs. <b>{predicted_price:.2f}</b></h1>', unsafe_allow_html=True)
+        st.markdown(f'<div style="background-color:#f0f0f0;padding:10px;border-radius:10px;">'
+                    f'<p style="font-size:24px;text-align:center;color:#008080;">'
+                    f'The predicted price for the selected laptop configuration is Rs. <b>{predicted_price:.2f}</b>'
+                    f'</p></div>', unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()

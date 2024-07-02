@@ -1,0 +1,71 @@
+Brand,Model,Processor,RAM,Storage SSD,Size,Graphics_card,Price
+Dell,Vostro 3520,Intel Core i3,16,512,15.6,No,54999
+Dell,Vostro 3520,Intel Core i5,16,512,15.6,No,68999
+Dell,Vostro 3520,Intel Core i5,16,512,15.6,No,69499
+Lenovo,V15,Intel Celeron,4,256,15.6,No,33999
+Dell,Latitude E5470,Intel Core i5,8,256,14,No,65000
+Dell,Vostro 3520,Intel Core i5,8,256,15.6,No,61500
+Acer,Aspire 5,Intel Core i5,8,512,15.6,No,71990
+Lenovo,Ideapad 1,Intel Celeron,8,256,15.6,No,35999
+Lenovo,V15,Intel Celeron,8,256,15.6,No,37999
+Lenovo,Ideapad Slim 3,Intel Core i5,8,512,15.6,No,68399
+Dell,Vostro 3520,Intel Core i3,8,512,15.6,No,52999
+Acer,Aspire 5,Intel Core i5,8,512,15.6,No,69990
+Acer,Aspire 3,AMD,16,512,15.6,No,76999
+Lenovo,LOQ 15,Intel Core i5,16,512,15.6,Yes,127900
+MSI,GF63 9SCSR,Intel Core i5,8,256,15.6,Yes,125000
+Dell,Vostro 3520,Intel Core i5,12,512,15.6,No,67990
+HP,Victus,AMD,16,512,15.6,Yes,97999
+HP,Victus,AMD,8,512,15.6,Yes,94999
+Lenovo,LOQ 15,Intel Core i5,8,512,15.6,Yes,99500
+Acer,Predator Triton 300 SE,Intel Core i7,16,512,14,Yes,123590
+Acer,Predator Helios 300,Intel Core i7,16,1024,15.6,Yes,137490
+Lenovo,IdeaPad 1,Intel Celeron,4,256,14,No,34000
+Asus,VivoBook,Intel Core i5,16,512,14,No,77000
+Lenovo,V14,Intel Celeron,4,256,14,No,33690
+Dell,Vostro 3520,Intel Core i3,8,512,15.6,No,51490
+MI,Notebook Pro,Intel Core i5,16,512,14,No,99999
+Dell,Latitude E5300,Intel Core i5,8,256,13.3,No,45000
+Lenovo,Ideapad Slim 3,Intel Core i3,8,256,15.6,No,53990
+Acer,Aspire 5,Intel Core i3,8,128,15.6,No,53990
+Dell,Vostro 3520,Intel Core i5,16,512,15.6,No,68500
+HP,15 fc0093dx,AMD,16,256,15.6,No,73999
+Asus,ZenBook,Intel Core i5,8,512,14.5,No,99990
+Asus,Expertbook,Intel Core i5,8,512,14,No,75000
+Honor,MagicBook X14,Intel Core i5,8,512,14,No,84999
+Lenovo,LOQ ,Intel Core i5,8,1024,15.6,Yes,116000
+HP,Notebook 250 G9,Intel Core i5,16,512,15.6,No,74999
+Dell,Vostro 3520,Intel Core i5,8,512,15.6,No,65000
+Acer,Nitro 5,AMD,16,512,15.6,Yes,102290
+Dell,Latitude E7390,Intel Core i5,8,256,13.3,No,45000
+Acer,Swift Go 14,AMD,16,512,14,No,89990
+Asus,Vivobook Go,Intel Core i3,8,256,15.6,No,54999
+Acer,Swift 3,AMD,8,512,14,No,81990
+Dell,Vostro 3520,Intel Core i3,8,512,15.6,No,50500
+Lenovo,IP Slim 3,Intel Core i5,8,512,15.6,No,71990
+Dell,Latitude E7490,Intel Core i7,8,256,14,No,52000
+Acer,Nitro V,Intel Core i7,16,512,15.6,Yes,139999
+Lenovo,IdeaPad Slim 3,Intel Core i3,8,256,15.6,No,51999
+Chuwi,GemiBook X,Intel Celeron,8,256,15.6,No,40999
+Lenovo,V14,Intel Celeron,4,256,14,No,34500
+Asus,Zephyrus G15,AMD,16,1024,15.6,Yes,205000
+Acer,Nitro V15,Intel Core i5,8,512,15.6,Yes,122500
+Lenovo,IdeaPad Slim 3,Intel Core i5,8,512,15.6,No,75999
+Lenovo,V15,Intel Celeron,4,256,15.6,No,32999
+Asus,ZenBook,AMD,8,256,14,No,85000
+Acer,Aspire 5,Intel Core i5,8,512,15.6,No,68499
+Dell,Latitude 5480,Intel Core i5,8,256,14,No,39999
+Lenovo,IP Slim 3,Intel Core i3,8,256,15.6,No,53990
+Asus,Vivobook,Intel Core i5,8,512,14,No,75990
+Dell,Latitude E5400,Intel Core i5,8,256,14,No,45499
+Acer,Aspire 5,Intel Core i3,4,128,15.6,No,51990
+Lenovo,Ideapad,Intel Celeron,4,256,14,No,35000
+Lenovo,Legion Slim 5,AMD,16,1024,16,Yes,179000
+Acer,Aspire 5,Intel Core i7,8,512,15.6,No,99999
+Asus,Vivobook Go,Intel Core i3,8,256,14,No,69444
+Acer,Aspire 5,Intel Core i5,8,512,15.6,No,76999
+Acer,Swift Go,AMD,16,512,14,No,91999
+Chuwi,HeroBook Plus,Intel Celeron,8,256,15.6,No,39499
+Acer,Travelmate P2,Intel Core i5,8,512,14,No,73999
+Asus,Vivobook,Intel Core i5,8,512,14,No,95500
+HP,Envy x360,Intel Core i7,16,1024,14,No,155000
