@@ -21,35 +21,39 @@ def main():
     # Load DataFrame
     df = load_data('dataframe.pkl')
 
-    # Sidebar inputs for user to enter specifications
-    st.sidebar.title('Enter Specifications')
+    # User inputs for laptop specifications
+    st.header('Enter Specifications')
 
-    brand_options = df['Brand'].unique()
-    selected_brand = st.sidebar.selectbox('Brand', brand_options)
+    col1, col2 = st.beta_columns(2)  # Split into two columns
 
-    model_options = df[df['Brand'] == selected_brand]['Model'].unique()
-    selected_model = st.sidebar.selectbox('Model', model_options)
+    with col1:
+        brand_options = df['Brand'].unique()
+        selected_brand = st.selectbox('Brand', brand_options)
 
-    processor_options = df['Processor'].unique()
-    selected_processor = st.sidebar.selectbox('Processor', processor_options)
+        model_options = df[df['Brand'] == selected_brand]['Model'].unique()
+        selected_model = st.selectbox('Model', model_options)
 
-    ram_options = df['RAM'].unique()
-    selected_ram = st.sidebar.selectbox('RAM', ram_options)
+        processor_options = df['Processor'].unique()
+        selected_processor = st.selectbox('Processor', processor_options)
 
-    manual_ssd = st.sidebar.selectbox('Select Storage SSD (GB)', ['128', '256', '512', '1024'])
+        ram_options = df['RAM'].unique()
+        selected_ram = st.selectbox('RAM', ram_options)
 
-    # Convert selected SSD to float and apply log transformation
-    selected_ssd = float(manual_ssd)
-    transformed_ssd = apply_log_transform(selected_ssd)
+    with col2:
+        manual_ssd = st.selectbox('Select Storage SSD (GB)', ['128', '256', '512', '1024'])
 
-    size_options = df['Size'].unique()
-    selected_size = st.sidebar.selectbox('Size', size_options)
+        # Convert selected SSD to float and apply log transformation
+        selected_ssd = float(manual_ssd)
+        transformed_ssd = apply_log_transform(selected_ssd)
 
-    graphics_options = df['Graphics_card'].unique()
-    selected_graphics = st.sidebar.selectbox('Graphics Card', graphics_options)
+        size_options = df['Size'].unique()
+        selected_size = st.selectbox('Size', size_options)
+
+        graphics_options = df['Graphics_card'].unique()
+        selected_graphics = st.selectbox('Graphics Card', graphics_options)
 
     # Predicting price based on user inputs
-    if st.sidebar.button('Predict Price'):
+    if st.button('Predict Price'):
         # Prepare input data for prediction
         input_data = {
             'Brand': selected_brand,
@@ -71,7 +75,7 @@ def main():
 
         # Display prediction with larger text using HTML h1 tag
         st.subheader('Predicted Price')
-        st.write(f'<h1 style="text-align:center;color:#008080;">The predicted price for the selected laptop configuration is Rs. <b>{predicted_price:.2f}</b></h1>', unsafe_allow_html=True)
+        st.markdown(f'<h1 style="text-align:center;color:#008080;">The predicted price for the selected laptop configuration is Rs. <b>{predicted_price:.2f}</b></h1>', unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
