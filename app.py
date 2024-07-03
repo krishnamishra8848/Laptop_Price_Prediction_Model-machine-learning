@@ -110,7 +110,7 @@ def main():
         st.subheader('Recommended Laptop')
         for index, row in recommendations.head(3).iterrows():
             with st.expander(f"{row['Brand']}"):
-                st.image(f"C:\\Users\\user\\Desktop\\Laptop_Price_Prediction_Model_Nepal\\laptop.jpg", width=100)
+    
                 st.write(f"**ब्रान्ड:** {row['Brand']}")
                 st.write(f"**RAM:** {row['RAM']}")
                 st.write(f"**प्रोसेसर:** {row['Processor']}")
