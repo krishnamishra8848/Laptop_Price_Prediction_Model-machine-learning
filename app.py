@@ -2,12 +2,24 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
-import requests
 
 # Load DataFrame from pickle file
 @st.cache_data(hash_funcs={pd.DataFrame: lambda _: None})
 def load_data(filename):
     return pd.read_pickle(filename)
+
+# Load the trained price prediction model and preprocessor from pickle files
+@st.cache_data
+def load_price_model(filename):
+    with open(filename, 'rb') as f:
+        model = pickle.load(f)
+    return model
+
+@st.cache_data
+def load_preprocessor(filename):
+    with open(filename, 'rb') as f:
+        preprocessor = pickle.load(f)
+    return preprocessor
 
 # Log transformation for Storage SSD
 def apply_log_transform(value):
@@ -27,7 +39,7 @@ def main():
    
     # Load DataFrame
     df = load_data('dataframe.pkl')
-
+    preprocessor = load_preprocessor('preprocessor.pkl')
 
     col1, col2 = st.columns([1, 3])  # Adjusting column widths
 
@@ -72,13 +84,13 @@ def main():
             'Graphics_card': graphics_dict[selected_graphics]  # Translate back to 0 or 1
         }
 
-        # Load the trained model from pickle file
+        # Load the trained price prediction model from pickle file
         with open('random_forest_cv.pkl', 'rb') as f:
-            model = pickle.load(f)
+            price_model = pickle.load(f)
 
-        # Make prediction
+        # Make price prediction
         X = pd.DataFrame([input_data])
-        predicted_price = model.predict(X)[0]
+        predicted_price = price_model.predict(X)[0]
 
         # Translate prediction to Nepali
         nepali_message = translate_to_nepali(input_data['Graphics_card'])
@@ -89,6 +101,21 @@ def main():
                     f'<p style="font-size:24px;text-align:center;color:#008080;">'
                     f'तपाइँको चयन गरिएको ल्यापटपको मूल्य रु. <b>{predicted_price:.2f}</b>'
                     f'</p></div>', unsafe_allow_html=True)
+
+        # Recommend laptops with similar prices
+        tolerance = 5000  # Price tolerance in Nepali Rupees
+        recommendations = df[(df['Price'] >= predicted_price - tolerance) & (df['Price'] <= predicted_price + tolerance)]
+
+        # Display recommendations with local images and details vertically
+        st.subheader('Recommended Laptop')
+        for index, row in recommendations.head(3).iterrows():
+            with st.expander(f"{row['Brand']}"):
+                st.image(f"C:\\Users\\user\\Desktop\\Laptop_Price_Prediction_Model_Nepal\\laptop.jpg", width=100)
+                st.write(f"**ब्रान्ड:** {row['Brand']}")
+                st.write(f"**RAM:** {row['RAM']}")
+                st.write(f"**प्रोसेसर:** {row['Processor']}")
+                st.write(f"**मूल्य:** रु. {row['Price']}")
+                st.write("---")  # Divider for better separation
 
 if __name__ == '__main__':
     main()
